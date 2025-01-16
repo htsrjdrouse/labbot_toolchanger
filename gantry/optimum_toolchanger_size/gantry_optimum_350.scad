@@ -24,13 +24,14 @@ DIN 3 Rails (35mm W) - 530mm	2
 
 include <tslot.inc.scad>
 
-translate([10+15,30+15-20,20])sawtooth_base();
+//translate([10+15,30+15-20,20])sawtooth_base();
 //base();
-gantry_assy();
+//gantry_assy();
 //translate([80,6,20])color("lime")tslot_connectors();
 //cube([50,50,4]);
 
 
+/*
 
 translate([440,550+160,-10+10])rotate([0,0,180]){
 translate([41.8+4.6+346.4,50-2.8,348])rotate([0,0,0])color("lime")import("model_Motor_Mount_v2Motor_Mount_B_Top.stl");
@@ -43,7 +44,6 @@ translate([-212.5+160,0-160,-2])z_axis_assy();
 translate([-212.5+865,-550+550-160,-2])rotate([0,0,180])mirror([0,1,0])z_axis_assy();
 }
 
-/*
 
 */
 
@@ -67,8 +67,9 @@ translate([10,9+20,-5])#cylinder(r=5.7/2,h=40,$fn=300);
 
 //translate([0,0,0])back_skirt();
 
+translate([160,160,0])front_skirt();
 
-misumi_gantry_assy();
+//misumi_gantry_assy();
 
 /*
 corners();
@@ -265,6 +266,10 @@ translate([627-212,-30+0.5-2.5-160.3,-183.0])rotate([90,0,90])difference(){
 import("../350/front_skirt_b_350.stl");
 translate([229-1,85,0])cube([4,100,80]);
 }
+
+
+translate([627-212,-30+0.5+210-3-2.5-160,-183.0+121])rotate([90,0,90])
+#translate([-59+0+77,-20+24-4,-30+30])cube([10,57,8]);
 
 translate([627-212,-30+0.5+210-3-2.5-160,-183.0+121])rotate([90,0,90])difference(){
 import("../350/longer_custom_center_300.stl");
