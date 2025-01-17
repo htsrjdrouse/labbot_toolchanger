@@ -24,7 +24,7 @@ DIN 3 Rails (35mm W) - 530mm	2
 
 include <tslot.inc.scad>
 
-//translate([10+15,30+15-20,20])sawtooth_base();
+translate([10+15,30+15-20,20])sawtooth_base();
 //base();
 //gantry_assy();
 //translate([80,6,20])color("lime")tslot_connectors();
@@ -67,11 +67,11 @@ translate([10,9+20,-5])#cylinder(r=5.7/2,h=40,$fn=300);
 
 //translate([0,0,0])back_skirt();
 
-translate([160,160,0])front_skirt();
-
-//misumi_gantry_assy();
+//translate([160,160,0])front_skirt();
 
 /*
+misumi_gantry_assy();
+
 corners();
 translate([160,160,0])front_skirt();
 translate([0,550,0])mirror([0,1,0])left_side_skirt();
@@ -346,13 +346,13 @@ translate([8-8+5+30+225,length/2-1+11-30-130-175,-120])cylinder(r=5.7/2,h=300,$f
 
 }
 
-translate([-22,-21,-30]){
-translate([-1-5,450+170-7,13]){
-translate([0,-516.5,0]){
-translate([16+73.5+410,30-12-77,20-3])rotate([0,0,45])cube([60+5.8-3,43+2.+8,4]);
-}
-}
-}
+
+
+
+
+
+
+
 }
 
 
@@ -364,6 +364,14 @@ translate([10+360-5.8+163,30-12,20-3])cube([62+5.8,43+2.+8,38]);
 
 
 }
+
+translate([-22,-21,-30]){
+translate([-1-5,450+170-7,13]){
+translate([16+73.5+412,30-12-60,20-3])rotate([0,0,45])cube([60+5.8-3,43+2.+8,4]);
+}
+}
+
+
 }
 
 module bottom_left_sawtooth(width,length,margin){
@@ -392,11 +400,8 @@ translate([-16+6,length/3+11,-20])cylinder(r=5.7/2,h=200,$fn=300);
 translate([-16+6,50+11,-20])cylinder(r=5.7/2,h=200,$fn=300);
 
 }
-translate([-22,-21,-30]){
-translate([-1-5,450+170-7,13]){
-translate([16+73.5+412,30-12-60,20-3])rotate([0,0,45])cube([60+5.8-3,43+2.+8,4]);
-}
-}
+
+
 }
 
 translate([-22,-21,-30]){
@@ -414,6 +419,14 @@ translate([8-8+5,length/2-1+11-30-130-120,-120])cylinder(r=5.7/2,h=300,$fn=300);
 }
 
 }
+translate([-22,-21,-30]){
+translate([-1-5,450+170-7,13]){
+translate([16+73.5,30-12-60,20-3])rotate([0,0,45])cube([60+5.8-3,43+2.+8,4]);
+}
+}
+
+
+
 }
 
 
@@ -445,6 +458,10 @@ translate([width/2-1+11,length/3+40+10,-20])cylinder(r=5.7/2,h=100,$fn=300);
 translate([width/2-1+11,80+10,-20])cylinder(r=5.7/2,h=100,$fn=300);
 
 }
+
+
+
+/*
 translate([-22,-21+2,-30]){
 translate([-1-5,450+170-7,13]){
 translate([0,-516.5,0]){
@@ -452,6 +469,9 @@ translate([0,-516.5,0]){
 }
 }
 }
+*/
+
+
 }
 
 translate([-22,-21,-30]){
@@ -469,6 +489,18 @@ translate([8-8+5,length/2-1+11-30-130-120,-120])cylinder(r=5.7/2,h=300,$fn=300);
 
 
 }
+
+
+translate([-22,-21,-30]){
+translate([-1-5,450+170-7,13]){
+translate([0,-516.5,0]){
+translate([16+73.5+410,30-12-77,20-3])rotate([0,0,45])cube([60+5.8-3,43+2.+8,4]);
+}
+}
+}
+
+
+
 }
 
 
@@ -490,11 +522,24 @@ translate([width/2-margin/2,length*i/8,0])cube([10-margin,length*1/16-margin,4])
 translate([width*i/8,length/2-margin/2,0])cube([width/15-margin,10-margin,4]);
 }
 }
+
+
+
+/*
 translate([-22,-21,-30]){
 translate([-1-5,450+170-7,13]){
 translate([16+73.5,30-12-60,20-3])rotate([0,0,45])cube([60+5.8-3,43+2.+8,4]);
 }
 }
+
+
+translate([-22,-21,-30]){
+translate([-1-5,450+170-7,13]){
+translate([16+73.5+412,30-12-60,20-3])rotate([0,0,45])cube([60+5.8-3,43+2.+8,4]);
+}
+}
+*/
+
 }
 
 translate([width/4-1+40+70+8,-17+7,-20])cylinder(r=5.7/2,h=200,$fn=300);
@@ -518,6 +563,18 @@ translate([8-8+5,length/2-1+11-30-130-120-40,-120])#cylinder(r=5.7/2,h=300,$fn=3
 
 
 }
+
+translate([-22,-21+2,-30]){
+translate([-1-5,450+170-7,13]){
+translate([0,-516.5,0]){
+#translate([16+73.5,30-12-60,20-3])rotate([0,0,45])cube([60+5.8-3,43+2.+8,4]);
+}
+}
+}
+
+
+
+
 }
 
 
@@ -534,10 +591,13 @@ margin = .3;
 difference(){
 
 union(){
-top_left_sawtooth(width,length,margin);
-bottom_left_sawtooth(width,length,margin);
-top_right_sawtooth(width,length,margin);
+
+//bottom_left_sawtooth(width,length,margin);
+//top_left_sawtooth(width,length,margin);
+//top_right_sawtooth(width,length,margin);
 bottom_right_sawtooth(width,length,margin);
+/*
+*/
 }
 
 /*
